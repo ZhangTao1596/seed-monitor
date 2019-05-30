@@ -56,6 +56,6 @@ function getAllVersion() {
 exports.Start = () => {
     getAllHeight();
     getAllVersion();
-    setInterval(getAllHeight, 300000);
-    setInterval(getAllVersion, 36000 * 1000 * 2);
+    setInterval(getAllHeight, 15000);
+    setInterval(getAllVersion, 15000);
 }

@@ -14,7 +14,9 @@ exports.SetVersion = (net, seed, version) => {
         value = {
             url: seed,
             version: "null",
-            height: "null"
+            height: "null",
+            type: "rpc",
+            latency: 0
         }
     }
     value.version = version;
@@ -32,7 +34,9 @@ exports.SetHeight = (net, seed, height) => {
         value = {
             url: seed,
             version: "null",
-            height: "null"
+            height: "null",
+            type: "rpc",
+            latency: 0
         }
     }
     value.height = height;
