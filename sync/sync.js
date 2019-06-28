@@ -10,10 +10,10 @@ function getAllHeight() {
         .then(h => {
             logger.info(`[sync] get height, seed: ${seed}, height: ${h}`);
             if (!h) {
-                cache.SetHeight("mainnet", seed, "unavailable")
+                cache.SetHeight("mainnet", seed, "--");
                 return;
             }
-            cache.SetHeight("mainnet", seed, h)
+            cache.SetHeight("mainnet", seed, h);
         })
     });
     seeds.testnet.forEach(seed => {
@@ -21,10 +21,10 @@ function getAllHeight() {
         .then(h => {
             logger.info(`[sync] get height, seed: ${seed}, height: ${h}`);
             if (!h) {
-                cache.SetHeight("testnet", seed, "unavailable")
+                cache.SetHeight("testnet", seed, "--");
                 return;
             }
-            cache.SetHeight("testnet", seed, h)
+            cache.SetHeight("testnet", seed, h);
         })
     });
 }
@@ -34,21 +34,21 @@ function getAllVersion() {
         .then(v => {
             logger.info(`[sync] get version, seed: ${seed}, version: ${v}`);
             if (!v) {
-                cache.SetVersion("mainnet", seed, "unavailable")
+                cache.SetVersion("mainnet", seed, "--");
                 return;
             }
-            cache.SetVersion("mainnet", seed, v)
-        })
+            cache.SetVersion("mainnet", seed, v);
+        });
     });
     seeds.testnet.forEach(seed => {
         neorpc.GetVersion(seed)
         .then(v => {
             logger.info(`[sync] get version, seed: ${seed}, version: ${v}`);
             if (!v) {
-                cache.SetVersion("testnet", seed, "unavailable")
+                cache.SetVersion("testnet", seed, "--");
                 return;
             }
-            cache.SetVersion("testnet", seed, v)
+            cache.SetVersion("testnet", seed, v);
         })
     });
 }

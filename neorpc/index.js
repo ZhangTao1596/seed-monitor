@@ -18,6 +18,7 @@ exports.GetBlockCount = function(url) {
             logger.error(res.error.message);
             return null;
         }
+        console.log(res);
         return res.result;
     })
     .catch(e => {
@@ -43,7 +44,7 @@ exports.GetVersion = function(url) {
             logger.error(res.error.message);
             return null;
         }
-        return res.result.useragent;
+        return res.result.useragent.replace("/", "");
     })
     .catch(e => {
         logger.error(e.message);

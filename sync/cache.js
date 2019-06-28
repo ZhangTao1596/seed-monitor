@@ -13,10 +13,19 @@ exports.SetVersion = (net, seed, version) => {
     if (!value) {
         value = {
             url: seed,
-            version: "null",
-            height: "null",
+            version: "--",
+            height: "--",
             type: "rpc",
-            latency: 0
+            latency: "--"
+        }
+    }
+    if (version == "--") {
+        value = {
+            url: seed,
+            version: "--",
+            height: "--",
+            type: "rpc",
+            latency: "--"
         }
     }
     value.version = version;
@@ -33,10 +42,48 @@ exports.SetHeight = (net, seed, height) => {
     if (!value) {
         value = {
             url: seed,
-            version: "null",
-            height: "null",
+            version: "--",
+            height: "--",
             type: "rpc",
             latency: 0
+        }
+    }
+    if (height == "--") {
+        value = {
+            url: seed,
+            version: "--",
+            height: "--",
+            type: "rpc",
+            latency: "--"
+        }
+    }
+    value.height = height;
+    seedsInfo.set(seed, value);
+}
+
+exports.SetLatency = (net, seed, latency) => {
+    let seedsInfo = null;
+    if (net === "mainnet")
+        seedsInfo = mainnetSeeds;
+    else 
+        seedsInfo = testnetSeeds;
+    let value = seedsInfo.get(seed);
+    if (!value) {
+        value = {
+            url: seed,
+            version: "--",
+            height: "--",
+            type: "rpc",
+            latency: latency
+        }
+    }
+    if (latency == "--") {
+        value = {
+            url: seed,
+            version: "--",
+            height: "--",
+            type: "rpc",
+            latency: "--"
         }
     }
     value.height = height;
