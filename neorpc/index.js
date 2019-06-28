@@ -43,7 +43,7 @@ exports.GetVersion = function(url) {
             logger.error(res.error.message);
             return null;
         }
-        return res.result.useragent.replace("/", "");
+        return res.result.useragent.replace(/\//gi, "");
     })
     .catch(e => {
         logger.error(e.message);
