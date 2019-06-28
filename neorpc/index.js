@@ -18,7 +18,6 @@ exports.GetBlockCount = function(url) {
             logger.error(res.error.message);
             return null;
         }
-        console.log(res);
         return res.result;
     })
     .catch(e => {
