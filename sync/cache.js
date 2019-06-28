@@ -45,7 +45,7 @@ exports.SetHeight = (net, seed, height) => {
             version: "--",
             height: "--",
             type: "rpc",
-            latency: 0
+            latency: "--"
         }
     }
     if (height == "--") {
