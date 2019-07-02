@@ -86,7 +86,7 @@ exports.SetLatency = (net, seed, latency) => {
             latency: "--"
         }
     }
-    value.height = height;
+    value.latency = latency;
     seedsInfo.set(seed, value);
 }
 

@@ -12,13 +12,16 @@ exports.GetBlockCount = function(url) {
             id: 0,
         },
         json: true,
+        resolveWithFullResponse: true,
+        time: true,
     }
     return rp(options).then(res => {
-        if (res.error) {
-            logger.error(res.error.message);
+        let body = res.body;
+        if (body.error) {
+            logger.error(body.error.message);
             return null;
         }
-        return res.result;
+        return [body.result, res.elapsedTime];
     })
     .catch(e => {
         logger.error(e.message);
