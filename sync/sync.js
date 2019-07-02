@@ -26,7 +26,7 @@ function getAllHeight() {
             }
             logger.info(`[sync] get height, seed: ${seed}, height: ${h[0]}, latency: ${h[1]}`);
             cache.SetHeight("testnet", seed, h[0]);
-            cache.SetLatency("mainet", seed, h[1]);
+            cache.SetLatency("testnet", seed, h[1]);
         })
     });
 }
