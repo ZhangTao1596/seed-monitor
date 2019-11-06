@@ -12,6 +12,6 @@ log4js.configure({
     },
     categories: { default: { appenders: ['console', 'file'], level: 'info' } }
 });
-var logger = log4js.getLogger('neo-warn');
+var logger = log4js.getLogger('seed-monitor');
 logger.level = 'info';
 exports.logger = logger;
