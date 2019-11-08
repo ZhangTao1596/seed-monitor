@@ -1,8 +1,8 @@
 {
     "port": 8080,
     "consensus":{
-        "mainnet": "2.10.2",
-        "testnet": "2.10.2"
+        "mainnet": "2.10.3",
+        "testnet": "2.10.3"
     },
     "seed": {
         "mainnet": [
